@@ -28218,7 +28218,7 @@ class GoogleLoginProvider extends BaseLoginProvider {
      */
     initialize() {
         return new Promise((resolve, reject) => {
-            this.loadScript(GoogleLoginProvider.PROVIDER_ID, '//apis.google.com/js/platform.js', () => {
+            this.loadScript(GoogleLoginProvider.PROVIDER_ID, '//apis.google.com/js/api.js', () => {
                 gapi.load('auth2', () => {
                     this.auth2 = gapi.auth2.init(Object.assign({}, this.opt, { client_id: this.clientId }));
                     this.auth2.then(() => {
